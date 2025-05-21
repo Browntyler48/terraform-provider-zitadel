@@ -8,7 +8,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/diag"
 	"github.com/hashicorp/terraform-plugin-framework/path"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
-	"github.com/hashicorp/terraform-plugin-framework/tfsdk"
+	"github.com/hashicorp/terraform-plugin-framework/schema"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/management"
 	textpb "github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/text"
@@ -38,7 +38,7 @@ func (r *initMessageTextResource) Metadata(_ context.Context, req resource.Metad
 	resp.TypeName = req.ProviderTypeName + "_init_message_text"
 }
 
-func (r *initMessageTextResource) GetSchema(ctx context.Context) (tfsdk.Schema, diag.Diagnostics) {
+func (r *initMessageTextResource) Schema(ctx context.Context) (schema.Schema, diag.Diagnostics) {
 	return text.GenSchemaMessageCustomText(ctx)
 }
 
@@ -220,7 +220,7 @@ func getID(ctx context.Context, obj types.Object) (string, string) {
 	return helper.GetStringFromAttr(ctx, obj.Attributes(), helper.OrgIDVar), helper.GetStringFromAttr(ctx, obj.Attributes(), LanguageVar)
 }
 
-func getPlanAttrs(ctx context.Context, plan tfsdk.Plan, diag diag.Diagnostics) (string, string) {
+func getPlanAttrs(ctx context.Context, plan resource.Plan, diag diag.Diagnostics) (string, string) {
 	var orgID string
 	diag.Append(plan.GetAttribute(ctx, path.Root(helper.OrgIDVar), &orgID)...)
 	if diag.HasError() {
@@ -235,7 +235,7 @@ func getPlanAttrs(ctx context.Context, plan tfsdk.Plan, diag diag.Diagnostics) (
 	return orgID, language
 }
 
-func getStateAttrs(ctx context.Context, state tfsdk.State, diag diag.Diagnostics) (string, string) {
+func getStateAttrs(ctx context.Context, state resource.State, diag diag.Diagnostics) (string, string) {
 	var orgID string
 	diag.Append(state.GetAttribute(ctx, path.Root(helper.OrgIDVar), &orgID)...)
 	if diag.HasError() {

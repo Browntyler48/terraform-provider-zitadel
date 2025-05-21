@@ -7,7 +7,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/diag"
 	"github.com/hashicorp/terraform-plugin-framework/path"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
-	"github.com/hashicorp/terraform-plugin-framework/tfsdk"
+	"github.com/hashicorp/terraform-plugin-framework/schema"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/admin"
 	textpb "github.com/zitadel/zitadel-go/v3/pkg/client/zitadel/text"
@@ -37,7 +37,7 @@ func (r *defaultVerifyEmailOTPMessageTextResource) Metadata(_ context.Context, r
 	resp.TypeName = req.ProviderTypeName + "_default_verify_email_otp_message_text"
 }
 
-func (r *defaultVerifyEmailOTPMessageTextResource) GetSchema(ctx context.Context) (tfsdk.Schema, diag.Diagnostics) {
+func (r *defaultVerifyEmailOTPMessageTextResource) Schema(ctx context.Context) (schema.Schema, diag.Diagnostics) {
 	s, d := text.GenSchemaMessageCustomText(ctx)
 	delete(s.Attributes, "org_id")
 	return s, d
@@ -215,7 +215,7 @@ func getID(ctx context.Context, obj types.Object) string {
 	return helper.GetStringFromAttr(ctx, obj.Attributes(), "id")
 }
 
-func getPlanAttrs(ctx context.Context, plan tfsdk.Plan, diag diag.Diagnostics) string {
+func getPlanAttrs(ctx context.Context, plan resource.Plan, diag diag.Diagnostics) string {
 	var language string
 	diag.Append(plan.GetAttribute(ctx, path.Root(LanguageVar), &language)...)
 	if diag.HasError() {
@@ -224,7 +224,7 @@ func getPlanAttrs(ctx context.Context, plan tfsdk.Plan, diag diag.Diagnostics) s
 	return language
 }
 
-func getStateAttrs(ctx context.Context, state tfsdk.State, diag diag.Diagnostics) string {
+func getStateAttrs(ctx context.Context, state resource.State, diag diag.Diagnostics) string {
 	var language string
 	diag.Append(state.GetAttribute(ctx, path.Root(LanguageVar), &language)...)
 	if diag.HasError() {

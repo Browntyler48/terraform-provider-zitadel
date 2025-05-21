@@ -29,7 +29,7 @@ import (
 	_ "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/options"
 	github_com_hashicorp_terraform_plugin_framework_attr "github.com/hashicorp/terraform-plugin-framework/attr"
 	github_com_hashicorp_terraform_plugin_framework_diag "github.com/hashicorp/terraform-plugin-framework/diag"
-	github_com_hashicorp_terraform_plugin_framework_tfsdk "github.com/hashicorp/terraform-plugin-framework/tfsdk"
+	github_com_hashicorp_terraform_plugin_framework_schema "github.com/hashicorp/terraform-plugin-framework/schema"
 	github_com_hashicorp_terraform_plugin_framework_types "github.com/hashicorp/terraform-plugin-framework/types"
 	github_com_hashicorp_terraform_plugin_go_tftypes "github.com/hashicorp/terraform-plugin-go/tftypes"
 )
@@ -39,11 +39,11 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-// GenSchemaLoginCustomText returns tfsdk.Schema definition for LoginCustomText
-func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terraform_plugin_framework_tfsdk.Schema, github_com_hashicorp_terraform_plugin_framework_diag.Diagnostics) {
-	return github_com_hashicorp_terraform_plugin_framework_tfsdk.Schema{Attributes: map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+// GenSchemaLoginCustomText returns schema.Schema definition for LoginCustomText
+func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terraform_plugin_framework_schema.Schema, github_com_hashicorp_terraform_plugin_framework_diag.Diagnostics) {
+	return github_com_hashicorp_terraform_plugin_framework_schema.Schema{Attributes: map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 		"email_verification_done_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"cancel_button_text": {
 					Description: "",
 					Optional:    true,
@@ -74,7 +74,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"email_verification_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"code_label": {
 					Description: "",
 					Optional:    true,
@@ -105,7 +105,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"external_registration_user_overview_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"back_button_text": {
 					Description: "",
 					Optional:    true,
@@ -191,7 +191,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"external_user_not_found_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"auto_register_button_text": {
 					Description: "",
 					Optional:    true,
@@ -242,7 +242,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"footer_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"help": {
 					Description: "",
 					Optional:    true,
@@ -274,7 +274,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Type:     github_com_hashicorp_terraform_plugin_framework_types.StringType,
 		},
 		"init_mfa_done_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"cancel_button_text": {
 					Description: "",
 					Optional:    true,
@@ -300,7 +300,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"init_mfa_otp_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"cancel_button_text": {
 					Description: "",
 					Optional:    true,
@@ -341,7 +341,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"init_mfa_prompt_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -377,7 +377,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"init_mfa_u2f_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -413,7 +413,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"init_password_done_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"cancel_button_text": {
 					Description: "",
 					Optional:    true,
@@ -439,7 +439,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"init_password_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"code_label": {
 					Description: "",
 					Optional:    true,
@@ -480,7 +480,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"initialize_done_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"cancel_button_text": {
 					Description: "",
 					Optional:    true,
@@ -506,7 +506,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"initialize_user_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"code_label": {
 					Description: "",
 					Optional:    true,
@@ -553,7 +553,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Type:     github_com_hashicorp_terraform_plugin_framework_types.StringType,
 		},
 		"linking_user_done_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"cancel_button_text": {
 					Description: "",
 					Optional:    true,
@@ -579,7 +579,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"linking_user_prompt_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -605,7 +605,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"login_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -666,7 +666,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"logout_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -687,7 +687,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"mfa_providers_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"choose_other": {
 					Description: "",
 					Optional:    true,
@@ -714,7 +714,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Type:     github_com_hashicorp_terraform_plugin_framework_types.StringType,
 		},
 		"password_change_done_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -735,7 +735,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"password_change_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"cancel_button_text": {
 					Description: "",
 					Optional:    true,
@@ -781,7 +781,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"password_reset_done_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -802,7 +802,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"password_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"back_button_text": {
 					Description: "",
 					Optional:    true,
@@ -868,7 +868,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"passwordless_prompt_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -904,7 +904,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"passwordless_registration_done_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"cancel_button_text": {
 					Description: "",
 					Optional:    true,
@@ -935,7 +935,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"passwordless_registration_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -971,7 +971,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"passwordless_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -1007,7 +1007,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"registration_option_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -1038,7 +1038,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"registration_org_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -1119,7 +1119,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"registration_user_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"back_button_text": {
 					Description: "",
 					Optional:    true,
@@ -1215,7 +1215,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"select_account_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -1261,7 +1261,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"success_login_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"auto_redirect_description": {
 					Description: "Text to describe that auto-redirect should happen after successful login",
 					Optional:    true,
@@ -1287,7 +1287,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"username_change_done_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -1308,7 +1308,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"username_change_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"cancel_button_text": {
 					Description: "",
 					Optional:    true,
@@ -1339,7 +1339,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"verify_mfa_otp_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"code_label": {
 					Description: "",
 					Optional:    true,
@@ -1365,7 +1365,7 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 			Optional:    true,
 		},
 		"verify_mfa_u2f_text": {
-			Attributes: github_com_hashicorp_terraform_plugin_framework_tfsdk.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+			Attributes: github_com_hashicorp_terraform_plugin_framework_schema.SingleNestedAttributes(map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 				"description": {
 					Description: "",
 					Optional:    true,
@@ -1398,9 +1398,9 @@ func GenSchemaLoginCustomText(ctx context.Context) (github_com_hashicorp_terrafo
 	}}, nil
 }
 
-// GenSchemaMessageCustomText returns tfsdk.Schema definition for MessageCustomText
-func GenSchemaMessageCustomText(ctx context.Context) (github_com_hashicorp_terraform_plugin_framework_tfsdk.Schema, github_com_hashicorp_terraform_plugin_framework_diag.Diagnostics) {
-	return github_com_hashicorp_terraform_plugin_framework_tfsdk.Schema{Attributes: map[string]github_com_hashicorp_terraform_plugin_framework_tfsdk.Attribute{
+// GenSchemaMessageCustomText returns schema.Schema definition for MessageCustomText
+func GenSchemaMessageCustomText(ctx context.Context) (github_com_hashicorp_terraform_plugin_framework_schema.Schema, github_com_hashicorp_terraform_plugin_framework_diag.Diagnostics) {
+	return github_com_hashicorp_terraform_plugin_framework_schema.Schema{Attributes: map[string]github_com_hashicorp_terraform_plugin_framework_schema.Attribute{
 		"button_text": {
 			Description: "",
 			Optional:    true,
